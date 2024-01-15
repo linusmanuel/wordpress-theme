@@ -13,6 +13,15 @@ get_header();
         the_post();
         the_content();
       endwhile;
+
+      // If comments are open then we can show the comments template
+      if( comments_open() || get_comments_number()) :
+        comments_template();
+      endif;
     ?>
   </main>
+  <?php get_sidebar(); ?>
 </div>
+
+<?php
+get_footer();
